@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  db:
+    image: mongo:latest
+    container_name: mongo-dev
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=djangoadmin
+      - MONGO_INITDB_DATABASE=auth
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - '27017:27017'
+    volumes:
+        - ./data:/data/db
+
+  api:
+    build: .
+    container_name: api
+    command: sh -c "python app/main.py"
+    volumes:
+        - .:/fastapi
+    ports:
+        - "8000:8000"
