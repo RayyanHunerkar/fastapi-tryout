@@ -7,6 +7,6 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /fastapi
 COPY requirements.txt /fastapi/
 RUN apk update
-RUN apk add gcc python3-dev musl-dev
+RUN apk add gcc python3-dev musl-dev libffi-dev
 RUN pip install -r requirements.txt
 COPY . /fastapi/
