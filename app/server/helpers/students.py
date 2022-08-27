@@ -6,4 +6,5 @@ def student_helper(student) -> dict:
         "course_of_study": student["course_of_study"],
         "year": student["year"],
         "GPA": student["gpa"],
+        # "student_class": class_helper(student["student_class"]),
     }

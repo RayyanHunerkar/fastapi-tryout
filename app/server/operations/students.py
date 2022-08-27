@@ -1,4 +1,3 @@
-import motor.motor_asyncio
 from bson.objectid import ObjectId
 
 from ..database import (
